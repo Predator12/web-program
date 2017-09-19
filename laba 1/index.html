@@ -12,25 +12,19 @@
   font-family: LinLibertine_DR;
   src: url(fonts/LinLibertine_DR.ttf);
 }
-body {
-    counter-reset: h1 1;
-}
+
 body {
     font: large/1.556 "Libertine_DR", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
     word-spacing: 0.1em;
     max-width: 960px;
     margin: 0 auto;
     padding-bottom: 2em;
+    background: #fff;
+    color: #000;
+    padding: 0;
 }
-body {
-  background: #fff;
-  color: #000;
-  padding: 0;
-}
-body {
-    display: block;
 
-}
+
 h1 {
     font-size: 266.7%;
     line-height: 1.1;
@@ -39,12 +33,7 @@ h1 {
     margin: 1.49em 0;
 }
 
-h1, h2, h3, h4, caption, thead th {
-    font-family: "Essays1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-    font-weight: normal;
-    text-transform: uppercase;
-    text-shadow: 0 0 1px #667;
-}
+
 
 
 h2 {
@@ -55,28 +44,53 @@ h2 {
     clear: both;
 }
 
+.pf {
+    margin: 1.75em 0;
+}
 
+.pf, .fr {
+    border: 1px solid;
+}
+div {
+    display: block;
+}
+.pf h4 {
+    margin: 0;
+    padding: 4px;
+    background: black;
+    color: white;
+}
+
+.f:first-letter{
+font-family: "Alphabet-of-Children.TTF";
+font-size: 8em;
+float: left;
+margin-right: 0.02em;
+line-height: 0.75;
+
+}
 
 </style>
+
 </head>
 <body>
 <p>You are here: <a href="index.html">Home</a> <span class="u triangularBullet"></span> <a href="table-of-contents.html#past">Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
-<h1><br>How Did We Get Here?</h1>
+<h1>№1<br>How Did We Get Here?</h1>
 <p id="toc">&nbsp;
-<p class="a rotatedFloralHeartBullet">
+</p>
 <h2 id="divingin">Diving In</h2>
 
-<p class="f">Recently, I stumbled across a quote from a Mozilla developer <a href="http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html">about the tension inherent in creating standards</a>:
+<p><span style="font-family:Alphabet-of-Children; font-size: 8.2em; float: left; margin-right: 0.02em; line-height: 0.75;">R</span>ecently, I stumbled across a quote from a Mozilla developer <a href="http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html">about the tension inherent in creating standards</a>:
 
 <blockquote cite="http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html">
 <p>Implementations and specifications have to do a delicate dance together. You don&rsquo;t want implementations to happen before the specification is finished, because people start depending on the details of implementations and that constrains the specification. However, you also don&rsquo;t want the specification to be finished before there are implementations and author experience with those implementations, because you need the feedback. There is unavoidable tension here, but we just have to muddle on through.
 </blockquote>
-
 <p>Keep this quote in the back of your mind, and let me explain how <abbr>HTML5</abbr> came to be.
 
-<p class="c"><img src="i/openclipart.org_johnny_automatic_animals_on_see_saw.png" width="526" height="116" alt="animals on a seesaw">
 
-<p class="a rotatedFloralHeartBullet">
+<h1><p class="c"><img src="fonts/f1.png" width="526" height="116" alt="animals on a seesaw"></h1>
+
+</p>
 
 <h2 id="mime-types">MIME types</h2>
 
@@ -92,11 +106,11 @@ h2 {
 
 <p>Tuck that under your hat. We&rsquo;ll come back to it.
 
-<p class="a rotatedFloralHeartBullet">
+</p>
 
 <h2 id="history-of-the-img-element">A long digression into how standards are made</h2>
 
-<p class="ss"><img src="i/openclipart.org_johnny_automatic_monkey_reading.png" width="365" height="396" alt="monkey reading a book">
+<p class="ss"><img src="fonts/f2.png" width="365" height="396" alt="monkey reading a book">
 
 <p>Why do we have an <code>&lt;img&gt;</code> element? That&rsquo;s not a question you hear every day. Obviously <em>someone</em> must have created it. These things don&rsquo;t just appear out of nowhere. Every element, every attribute, every feature of <abbr>HTML</abbr> that you&rsquo;ve ever used &mdash; someone created them, decided how they should work, and wrote it all down. These people are not gods, nor are they flawless. They&rsquo;re just people. Smart people, to be sure. But just people.
 
@@ -268,7 +282,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p>I am extraordinarily fascinated with all aspects of this almost-19-year-old conversation that led to the creation of an <abbr>HTML</abbr> element that has been used on virtually every web page ever published. Consider:
 
-<p class="ss"><img src="i/openclipart.org_johnny_automatic_Corsican_Pine.png" width="216" height="405" alt="pine tree">
+
 
 <ul>
 <li>HTTP still exists. HTTP successfully evolved from 0.9 into 1.0 and later 1.1. <a href="http://datatracker.ietf.org/wg/httpbis/charter/">And still it evolves</a>.
@@ -314,7 +328,6 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p>Why are <abbr>MIME</abbr> types important? Why do I keep coming back to them? Three words: <a href="http://www.w3.org/html/wg/wiki/DraconianErrorHandling">draconian error handling</a>. Browsers have always been &ldquo;forgiving&rdquo; with <abbr>HTML</abbr>. If you create an <abbr>HTML</abbr> page but forget the <code>&lt;/head&gt;</code> tag, browsers will display the page anyway. (Certain tags implicitly trigger the end of the <code>&lt;head&gt;</code> and the start of the <code>&lt;body&gt;</code>.) You are supposed to nest tags hierarchically &mdash; closing them in last-in-first-out order &mdash; but if you create markup like <code>&lt;b&gt;&lt;i&gt;&lt;/b&gt;&lt;/i&gt;</code>, browsers will just deal with it (somehow) and move on without displaying an error message.
 
-<p style="float:left;margin-right:1.75em"><img src="i/openclipart.org_johnny_automatic_3_birds.png" width="187" height="362" alt="three birds laughing">
 
 <p>As you might expect, the fact that &ldquo;broken&rdquo; <abbr>HTML</abbr> markup still worked in web browsers led authors to create broken <abbr>HTML</abbr> pages. A lot of broken pages. By some estimates, over 99% of <abbr>HTML</abbr> pages on the web today have at least one error in them. But because these errors don&rsquo;t cause browsers to display visible error messages, nobody ever fixes them.
 
@@ -363,7 +376,6 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <h2 id="whatwg">WHAT Working Group?</h2>
 
-<p class="ss"><img src="i/openclipart.org_johnny_automatic_big_sandwich.png" width="182" height="523" alt="big sandwich">
 
 <p>What the heck is the <abbr>WHAT</abbr> Working Group? I&rsquo;ll let them <a href="http://www.whatwg.org/news/start">explain it for themselves</a>:
 
@@ -385,7 +397,6 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <h2 id="reinventing-html">Back to the W3C</h2>
 
-<p class="ss"><img src="i/openclipart.org_johnny_automatic_a_dog_and_a_cat_with_an_umbrella.png" width="356" height="329" alt="cat and dog holding an umbrella">
 
 <p>For two and a half years, the W3C and the WHAT Working Group largely ignored each other. While the WHAT Working Group focused on web forms and new HTML features, the W3C HTML Working Group was busy with version 2.0 of XHTML. But by October 2006, it was clear that the WHAT Working Group had picked up serious momentum, while XHTML 2 was still languishing in draft form, unimplemented by any major browser. In October 2006, Tim Berners-Lee, the founder of the W3C itself, <a href="http://dig.csail.mit.edu/breadcrumbs/node/166">announced that the W3C would work together with the WHAT Working Group</a> to evolve <abbr>HTML</abbr>.
 
