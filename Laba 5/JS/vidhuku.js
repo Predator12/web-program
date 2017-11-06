@@ -39,8 +39,7 @@ function AddReview() {
             "                    </div>\n" +
             "                </article>\n" +
             "            </li>");
-        $('#list li:last .user_adress').append(
-            "Петро Загорецький")
+        $('#list li:last .user_adress').append($('#name').val());
         $('#list li:last .review').append($('#longdescription').val());
         $('#list li:last .review_time').append(now.toDateString());
         $('#longdescription').val('');
@@ -74,8 +73,7 @@ function ReadOflineReview() {
         review =JSON.parse(localStorage.getItem(k));
         console.log(review[0].time);
 
-        $('#list li:last .user_adress').append(
-            "Вася Пупкін")
+        $('#list li:last .user_adress').append($('#name').val());
         $('#list li:last .review').append(review[0].message);
         $('#list li:last .review_time').append(review[0].time);
 
