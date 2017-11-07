@@ -18,7 +18,7 @@ function isOnline() {
 
 
 function AddReview() {
-    if ($('#longdescription').val()===""){
+    if (($('#longdescription').val()==="") || ($('#name').val()==="")){
         alert('Заповніть всі поля');
         return false;
     }
@@ -43,6 +43,7 @@ function AddReview() {
         $('#list li:last .review').append($('#longdescription').val());
         $('#list li:last .review_time').append(now.toDateString());
         $('#longdescription').val('');
+
     }
     else {
         i++;
