@@ -79,19 +79,19 @@
       <div class="row">
         <div class="form-group col-lg-4">
           <label class="text-heading">Назва</label>
-          <input type="text"id = "namearticle" class="form-control">
+          <input type="text"id = "namearticle" class="form-control" required>
         </div>
         <div class="form-group col-lg-4">
           <label class="text-heading">Короткий опис</label>
-          <input type="text" id = "shortdescription" class="form-control">
+          <input type="text" id = "shortdescription" class="form-control" required>
         </div>
         <div class="clearfix"></div>
         <div class="form-group col-lg-12">
           <label class="text-heading">Повний опис</label>
-          <textarea class="form-control" id="longdescription" rows="6"></textarea>
+          <textarea class="form-control" id="longdescription" rows="6" required></textarea>
         </div>
         <div class="form-group col-lg-12">
-          <button type="submit" onclick="AddNews()" class="btn btn-secondary">Додати</button>
+          <button type="submit" onclick="AddNews()">Додати</button>
         </div>
       </div>
     </form>

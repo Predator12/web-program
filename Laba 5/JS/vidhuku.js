@@ -43,7 +43,7 @@ function AddReview() {
         $('#list li:last .review').append($('#longdescription').val());
         $('#list li:last .review_time').append(now.toDateString());
         $('#longdescription').val('');
-
+        $('#name').val('');
     }
     else {
         i++;
