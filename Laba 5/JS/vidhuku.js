@@ -49,7 +49,9 @@ function AddReview() {
         if (useLocalStorage) {
             i++;
             var list = [];
-            list.push({"message": $('#longdescription').val() , "user"$('#name').val(), "time": now.toDateString()});
+            list.push({"message": $('#longdescription').val() ,
+                        "user": $('#name').val(),
+                        "time": now.toDateString()});
             localStorage.setItem(i, JSON.stringify(list));
         }
         else {
