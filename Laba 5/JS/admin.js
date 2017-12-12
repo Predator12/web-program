@@ -9,11 +9,21 @@ function AddNews() {
         alert('Заповніть всі дані');
         return false;
     }
-
     if (isOnline()) {
-        alert('Новину успішно додано');
-    }
-    else {
+          var data = {
+            namearticle:  $('#namearticle').val(),
+            shortdescription: $('#shortdescription').val(),
+            longdescription: $('#longdescription').val()
+          }
+          $.ajax({
+              url: 'http://localhost:8080/api/posts',
+              type: "post",
+              dataType: "json",
+              data: data
+          });
+        }
+    else
+    {
         if (useLocalStorage){
             i++;
             var list = [];
